@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\StarStore.Application\StarStore.Application.csproj" />
+    <ProjectReference Include="..\StarStore.Domain\StarStore.Domain.csproj" />
+    <ProjectReference Include="..\StarStore.Infra.Data\StarStore.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
