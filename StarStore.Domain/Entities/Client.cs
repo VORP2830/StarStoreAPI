@@ -7,5 +7,7 @@ public class Client : BaseEntity
     public string ZipCode { get; protected set; }
     public string Seller { get; protected set; }
     public string ThumbnailHd { get; protected set; }
+    public IEnumerable<CreditCard> CreditCards { get; protected set; }
+    public IEnumerable<Transaction> Transactions { get; protected set; }
     protected Client() { }
 }
