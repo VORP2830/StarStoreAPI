@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StarStore.Application.DTOs.Mapping;
 using StarStore.Domain.Interfaces;
 using StarStore.Infra.Data.Context;
 using StarStore.Infra.Data.Repositories;
@@ -14,9 +15,11 @@ public static class DependencyInjection
         var connectionString = Environment.GetEnvironmentVariable("DATABASE") ?? configuration.GetConnectionString("DefaultConnection");
         service.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(connectionString, b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+        
+        service.AddAutoMapper(typeof(MappingProfile));
 
         service.AddScoped<IUnitOfWork, UnitOfWork>();
-        
+
         return service;
     }
 }
